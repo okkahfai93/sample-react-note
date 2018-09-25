@@ -5,6 +5,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import { Link } from 'react-router-dom';
 
 const styles = theme => ({
@@ -13,6 +15,12 @@ const styles = theme => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  icon: {
+    margin: theme.spacing.unit,
+  },
 });
 
 class NoteListing extends Component {
@@ -20,6 +28,11 @@ class NoteListing extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
+        <Link to="/new">
+          <IconButton className={classes.button} aria-label="New Note">
+            <NoteAddIcon className={classes.icon} />
+          </IconButton>
+        </Link>
         <List component="nav">
           <Link to="/note1">
             <ListItem button>

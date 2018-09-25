@@ -11,7 +11,7 @@ class App extends Component {
         <React.Fragment>
           <Route path="/" component={Nav}/>
           <Route exact path="/" component={NoteListing}/>
-          <Route path="/note1" component={Note}/>
+          <Route path="/new" component={Note}/>
         </React.Fragment>
       </Router>
     );
